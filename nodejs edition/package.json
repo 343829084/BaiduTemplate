@@ -1,13 +1,11 @@
 {
-    "name":"baidutemplate",
-    "version":"1.0.5-dev",
-    "description":"a very easy to use javascript template engine",
+    "name":"baidutemplate-x",
+    "version":"1.0.6",
+    "description":"a fork of baidutemplate to fix bugs",
     "homepage":"http://baidufe.github.com/BaiduTemplate",
-    "author":"baiduTemplate.js authors {1988wangxiao@gmail.com | http://weibo.com/crazycomputer}",
-    "keywords":["baidu","baidufe","javascript","template","baiduTemplate","baidutemplate"],
     "repository":{
         "type":"git",
-        "url":"git://github.com/BaiduFE/BaiduTemplate.git"
+        "url":"https://github.com/fouber/BaiduTemplate.git"
     },
-    "main":"./BaiduTemplate"
+    "main":"./baiduTemplate"
 }
