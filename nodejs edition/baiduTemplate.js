@@ -25,7 +25,7 @@
             //判断如果没有document，则为非浏览器环境
             if(!this.document){
                 return bt._compile(str);
-            };
+            }
 
             //HTML5规定ID可以由任何不包含空格字符的字符串组成
             var element = document.getElementById(str);
@@ -34,7 +34,7 @@
                 //取到对应id的dom，缓存其编译后的HTML模板函数
                 if (bt.cache[str]) {
                     return bt.cache[str];
-                };
+                }
 
                 //textarea或input则取value，其它情况取innerHTML
                 var html = /^(textarea|input)$/i.test(element.nodeName) ? element.value : element.innerHTML;
@@ -45,7 +45,7 @@
                 //是模板字符串，则生成一个函数
                 //如果直接传入字符串作为模板，则可能变化过多，因此不考虑缓存
                 return bt._compile(str);
-            };
+            }
 
         })();
 
@@ -86,7 +86,7 @@
 
     //转义影响正则的字符
     bt._encodeReg = function (source) {
-        return String(source).replace(/([.*+?^=!:${}()|[\]/\\])/g,'\\$1');
+        return String(source).replace(/[.*+?^=!:${}()|\[\]\/\\]/g,'\\$&');
     };
 
     //转义UI UI变量使用在HTML页面标签onclick等事件函数参数中
@@ -149,7 +149,7 @@
 
                         //将标签内的单引号转义为\r  结合最后一步，替换为\'
                         str = str.replace(/(<[^<]*?)&#39;([^<]*?>)/g,'$1\r$2')
-                    };
+                    }
                 }else{
                     str = item;
                 }
@@ -181,7 +181,7 @@
                 
                 //默认不转义HTML转义
                 .replace(new RegExp("\\t=(.*?)"+_right,"g"),"',typeof($1) === 'undefined'?'':$1,'");
-        };
+        }
 
         str = str
 
